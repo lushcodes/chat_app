@@ -11,16 +11,18 @@
     <div class="ui fluid raised card chatbox">
       <div class="content">
         <div class="ui feed">
-          <div class="event">
-            <div class="label">
-              User
-            </div>
+          
+          <% @messages.each do |message| %>
+            <div class="event">
             <div class="content">
-              <div class="summary">
-                <em class="user">Jenny Hess</em>:  Test Message
+              <div class="summary">           
+                <em class="user"><%= message.user.username %></em>: <%= message.body %>     
               </div>
             </div>
           </div>
+          <% end %>
+
+
         </div>
       </div>
        <div class="extra content">
