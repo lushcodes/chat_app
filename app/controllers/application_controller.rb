@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 
   helper_method :current_user, :logged_in?
+  #Any helper_methods you wish to use in views must be stated here. Controllers don't need this declaration. 
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
